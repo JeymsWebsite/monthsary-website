@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 1st Monthsary 💗</title>
+  <meta name="description" content="Isang cute na website made with love para sa first monthsary natin." />
+  <style>
+    :root {
+      --rose: #e85d83;
+      --deep: #9f3157;
+      --cream: #fff8f7;
+      --pink: #ffe2e9;
+      --ink: #512b3a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(255, 210, 224, .8), transparent 28%),
+        radial-gradient(circle at 90% 80%, rgba(255, 224, 233, .8), transparent 30%),
+        var(--cream);
+      overflow-x: hidden;
+    }
+    .hearts { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .heart {
+      position: absolute; bottom: -40px; opacity: 0;
+      color: #ed91aa; animation: floatUp linear infinite;
+      filter: drop-shadow(0 3px 5px #f8d0db);
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      12% { opacity: .65; }
+      85% { opacity: .45; }
+      100% { transform: translateY(-115vh) rotate(28deg); opacity: 0; }
+    }
+    main { position: relative; z-index: 1; }
+    .hero {
+      min-height: 100svh; display: grid; place-items: center; padding: 54px 20px;
+      text-align: center;
+    }
+    .hero-card {
+      width: min(720px, 100%); padding: clamp(28px, 6vw, 58px);
+      border: 1px solid rgba(232, 93, 131, .2);
+      border-radius: 30px; background: rgba(255,255,255,.76);
+      box-shadow: 0 22px 70px rgba(159,49,87,.12);
+      backdrop-filter: blur(8px);
+    }
+    .eyebrow {
+      display: inline-block; padding: 8px 14px; border-radius: 999px;
+      background: var(--pink); color: var(--deep); font-size: .82rem;
+      letter-spacing: .12em; text-transform: uppercase; font-weight: 700;
+    }
+    h1 {
+      margin: 22px 0 12px; font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.6rem, 8vw, 5.6rem); line-height: 1.02;
+      color: var(--deep); font-weight: 700; letter-spacing: -.045em;
+    }
+    .subtitle { font-size: clamp(1rem, 2.5vw, 1.25rem); line-height: 1.7; max-width: 530px; margin: 0 auto; }
+    .big-heart { font-size: 3.4rem; display: inline-block; margin: 16px 0 8px; animation: heartbeat 1.5s ease-in-out infinite; }
+    @keyframes heartbeat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.15); } 30% { transform: scale(1); } 45% { transform: scale(1.1); } }
+    .names { margin-top: 22px; color: var(--rose); font-family: Georgia, serif; font-size: 1.45rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 26px; padding: 14px 23px; border: 0; border-radius: 999px;
+      background: var(--rose); color: white; text-decoration: none; font-size: 1rem;
+      font-weight: 700; cursor: pointer; box-shadow: 0 9px 22px rgba(232,93,131,.28);
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--deep); }
+    section { padding: 72px 20px; }
+    .section-inner { width: min(900px, 100%); margin: 0 auto; }
+    .section-title { text-align: center; font-family: Georgia, serif; color: var(--deep); font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 12px; }
+    .section-intro { text-align: center; line-height: 1.7; max-width: 600px; margin: 0 auto 32px; }
+    .letter {
+      max-width: 720px; margin: 0 auto; padding: clamp(24px, 5vw, 44px);
+      background: #fff; border-radius: 18px; border: 1px solid #f5cbd6;
+      box-shadow: 0 14px 35px rgba(159,49,87,.08);
+      line-height: 1.9; font-size: 1.05rem; white-space: pre-line;
+    }
+    .letter .salutation { font-family: Georgia, serif; font-size: 1.45rem; color: var(--deep); }
+    .memory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .memory {
+      min-height: 170px; padding: 24px 18px; border-radius: 20px;
+      background: rgba(255,255,255,.8); border: 1px solid #f6d4de;
+      text-align: center; display: flex; flex-direction: column; justify-content: center; gap: 10px;
+    }
+    .memory .emoji { font-size: 2rem; }
+    .memory h3 { margin: 0; color: var(--deep); font-family: Georgia, serif; }
+    .memory p { margin: 0; line-height: 1.6; font-size: .95rem; }
+    .promise {
+      background: linear-gradient(135deg, #ffe7ed, #fff5f7);
+      border-radius: 26px; padding: clamp(28px, 6vw, 50px); text-align: center;
+      border: 1px solid #f7c9d6;
+    }
+    .promise p { max-width: 650px; margin: 16px auto 0; font-size: 1.08rem; line-height: 1.9; }
+    footer { padding: 28px 20px 44px; text-align: center; color: #a45d74; font-size: .9rem; }
+    .small-note { opacity: .8; font-size: .85rem; margin-top: 10px; }
+    @media (max-width: 650px) {
+      .memory-grid { grid-template-columns: 1fr; }
+      .memory { min-height: auto; }
+      section { padding: 54px 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <main>
+    <header class="hero" id="home">
+      <div class="hero-card">
+        <span class="eyebrow">A little celebration of us ♡</span>
+        <div class="big-heart" aria-hidden="true">💗</div>
+        <h1>Happy 1st<br>Monthsary!</h1>
+        <p class="subtitle">One month na tayo, love! 🥹💗 Ang saya ko na nagsimula ang little story natin. Here’s to more memories, tawanan, lambing, at pagmamahal together.</p>
+        <div class="names">Para sa favorite person ko, with love ♡</div>
+        <a class="button" href="#letter">Buksan ang little surprise mo ↓</a>
+      </div>
+    </header>
+
+    <section id="letter">
+      <div class="section-inner">
+        <h2 class="section-title">A letter para sa’yo 💌</h2>
+        <p class="section-intro">Konting words lang, pero galing sa heart ko. ♡</p>
+        <article class="letter">
+          <div class="salutation">My love, 💗</div>
+
+          Happy 1st monthsary sa atin! ❤️🥹
+
+          Thank you kasi naging part ka ng everyday ko at nagbibigay ka ng little reasons para ngumiti ako. One month pa lang, pero grateful na ako sa bawat usap natin, sa mga tawanan, sa lambing, at sa lahat ng moments na pinagsaluhan natin. Kahit simple lang, special sila para sa akin dahil ikaw ang kasama ko.
+
+          Alam kong hindi naman palaging perfect ang bawat araw, pero sana patuloy tayong matutong umintindi, makinig, at maging honest sa isa’t isa. Gusto kong sabay tayong mag-grow, suportahan ang dreams ng bawat isa, at gumawa ng memories na balang araw ay babalikan natin nang nakangiti.
+
+          This is only the beginning of our story, love. Thank you for being you, and thank you kasi nandito ka. Hindi man perfect ang words ko, sincere naman lahat ng ito. I’m happy na ikaw ang kasama ko sa little journey na ’to. 🫶
+
+          <strong>Happy first monthsary, my favorite person! More dates, more kwentuhan, more kulit, more lambing, and more monthsaries to come. I’m rooting for us, always. 💗✨</strong>
+
+          With all my love,
+          <strong>Your person ♡</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="little-things">
+      <div class="section-inner">
+        <h2 class="section-title">Mga little things na love ko 💕</h2>
+        <p class="section-intro">Minsan, ang simplest moments pa ang pinaka-special.</p>
+        <div class="memory-grid">
+          <div class="memory"><span class="emoji">💬</span><h3>Our kwentuhan</h3><p>Kahit random topics lang, mas masaya kapag ikaw ang kausap ko.</p></div>
+          <div class="memory"><span class="emoji">🌷</span><h3>Presence mo</h3><p>Ang comforting lang na part ka ng life ko.</p></div>
+          <div class="memory"><span class="emoji">✨</span><h3>Memories natin</h3><p>Bawat little moment na nagiging special dahil sa atin.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="promise">
+      <div class="section-inner">
+        <div class="promise">
+          <h2 class="section-title">One month down, more to go 💞</h2>
+          <p>Hindi ko maipapangakong magiging perfect ang lahat, pero I promise na patuloy akong matututo, makikinig, at gagawin ang best ko para sa atin. Sana lagi tayong may dahilan para tumawa, lakas ng loob para pag-usapan ang problems, at time para ipaalala sa isa’t isa kung gaano tayo ka-important. One step at a time, together tayo. 🩷</p>
+          <button class="button" id="surpriseBtn" type="button">Tap mo for a tiny surprise 💖</button>
+          <p id="surprise" hidden aria-live="polite"><strong>Love na love ka, appreciated ka, at deserve mong i-celebrate — today and every day. Happy monthsary sa atin! 🥹💗</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Made with love, para sa’yo lang ♡
+      <div class="small-note">Our little corner to celebrate month one. 💗</div>
+    </footer>
+  </main>
+  <script>
+    const heartContainer = document.getElementById('hearts');
+    const symbols = ['♡', '♥', '💗', '✧'];
+    for (let i = 0; i < 22; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'heart';
+      heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.fontSize = (14 + Math.random() * 22) + 'px';
+      heart.style.animationDuration = (9 + Math.random() * 12) + 's';
+      heart.style.animationDelay = (-Math.random() * 18) + 's';
+      heartContainer.appendChild(heart);
+    }
+    document.getElementById('surpriseBtn').addEventListener('click', function () {
+      const message = document.getElementById('surprise');
+      message.hidden = !message.hidden;
+      this.textContent = message.hidden ? 'Tap mo for a tiny surprise 💖' : 'Sending you a big hug 🤗';
+    });
+  </script>
+</body>
+</html>
